@@ -1,10 +1,8 @@
-const http = require('http');
-const data = require('./data');
-http.createServer((req,resp)=> {
-    resp.writeHead(200,{'Content-Type':'application\json'});
-    resp.write(JSON.stringify(data));
-    resp.end();
-}).listen(5000)
+const fs = require('fs');
+const path = require('path');
+const dirPath = path.join(__dirname,'crud');
+const filePath =`${dirPath}/apple.txt`;
+fs.writeFileSync(filePath,'this is file');
 
 
 
